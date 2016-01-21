@@ -1,0 +1,11 @@
+---
+- name: common
+  hosts: elastic_servers
+  #remote_user: vagrant
+  #sudo: yes
+  roles:
+  - role: elastic
+
+
+
+

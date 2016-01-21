@@ -1,0 +1,18 @@
+---
+- name: common
+  hosts: elastic_servers
+  #sudo: yes
+  roles:
+  - role: elastic
+- hosts: primary_servers
+  #sudo: yes
+  roles:
+  - role: primary
+- hosts: secondary_servers
+  #sudo: yes
+  roles:
+  - role: secondary
+
+
+
+

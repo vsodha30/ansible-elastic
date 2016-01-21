@@ -1,0 +1,14 @@
+---
+- name: install the latest version of Java
+  yum: name=java-1.8.0-openjdk.x86_64 state=latest
+   
+- name: download
+  shell: "wget {{elastic_url}} chdir=~  creates=~/elasticsearch-2.1.1.tar.gz"
+
+- name: untar
+  shell: "chdir=~ tar xvf elasticsearch-2.1.1.tar.gz"
+- name: Configure elastic
+  become: yes
+  template: src=mongod.conf.j2 dest=~/elasticsearch-2.1.1/config/elasticsearch.yml owner=root group=root mode=0644
+
+
